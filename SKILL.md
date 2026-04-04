@@ -48,7 +48,7 @@ digraph atomic {
 - Refactor + bug fix = two commits (the fix matters for bisect)
 - Typo fix + config change + style fix = three commits
 - New function + its tests + its caller = two commits (caller depends on the definition, but tests can be added separately)
-- Logic + UI = two commits
+- Logic + UI = two commits (UI can technically exist without logic; it's not going to crash or cause any signficant error)
 
 ## Gitmoji Convention
 
