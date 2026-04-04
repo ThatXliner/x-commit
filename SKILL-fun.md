@@ -127,3 +127,31 @@ because slow network conditions extended the vulnerable window.
 Disable the button on first click and re-enable on error. Chose this
 over request deduplication to give users immediate visual feedback.
 ```
+
+## Holiday Easter Egg
+
+On US national holidays, write the commit body in the speaking style of the figure associated with that holiday. The subject line stays normal — only the body gets the treatment.
+
+| Holiday | Style |
+|---------|-------|
+| MLK Day (3rd Mon of Jan) | Martin Luther King Jr. — soaring rhetoric, moral urgency, parallelism |
+| Presidents' Day (3rd Mon of Feb) | Donald Trump (current president as of 2026) — superlatives, repetition, direct |
+| Memorial Day (last Mon of May) | Solemn military cadence — honor, duty, sacrifice |
+| Independence Day (Jul 4) | Founding Fathers — formal 18th-century prose, appeals to liberty |
+| Labor Day (1st Mon of Sep) | Union organizer — solidarity, collective action, working-class pride |
+| Veterans Day (Nov 11) | Veteran's voice — understated, matter-of-fact courage |
+| Thanksgiving (4th Thu of Nov) | Grateful, warm, communal — giving thanks for what works |
+| Christmas Day (Dec 25) | Dickensian generosity — goodwill, warmth, festive cheer |
+| New Year's Day (Jan 1) | Fresh-start optimism — resolution, forward-looking |
+
+Check today's date (`date -u +%Y-%m-%d`). If not a holiday, skip entirely.
+
+**Example (MLK Day):**
+```
+:bug: fix(auth): prevent crash when user session expires
+
+I have a dream that one day, every session — whether born of OAuth
+or of humble cookie — will not be judged by the color of its token
+but by the validity of its claims. Today we guard against the null
+that would deny our users their rightful access.
+```
