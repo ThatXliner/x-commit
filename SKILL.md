@@ -35,7 +35,7 @@ Split changes into the smallest **independently revertable** unit. The goal: `gi
 
 **Format:** `:gitmoji: type(scope): imperative description`
 
-Use GitHub shortcode syntax combined with Conventional Commits. Prefer specific gitmojis over general ones (e.g. `:passport_control:` for login logic, not `:sparkles:`).
+Use GitHub shortcode syntax combined with Conventional Commits. Prefer specific gitmojis over general ones (e.g. `:passport_control:` for login logic, not `:sparkles:` or `:rocket:` not `:wrench:`).
 
 ### Most Common Gitmoji
 
@@ -62,7 +62,6 @@ Use GitHub shortcode syntax combined with Conventional Commits. Prefer specific 
 | :pencil2: | Fix typos |
 | :card_file_box: | Database changes |
 | :label: | Types |
-| :construction: | Work in progress |
 | :see_no_evil: | .gitignore |
 | :rotating_light: | Fix linter warnings |
 | :building_construction: | Architectural changes |
@@ -72,6 +71,8 @@ Use GitHub shortcode syntax combined with Conventional Commits. Prefer specific 
 | :passport_control: | Auth, roles, permissions |
 | :thread: | Concurrency |
 | :wastebasket: | Deprecate code |
+| :rocket: | Deployment-related |
+| :loud_sound: | Logging |
 
 Full reference: https://gitmoji.dev/
 
