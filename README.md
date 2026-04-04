@@ -47,6 +47,7 @@ The hook lives in `.claude/settings.json` in this repo, but it only applies when
     ]
   }
 }
+```
 
 ## Usage
 
