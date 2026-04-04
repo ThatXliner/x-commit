@@ -14,7 +14,13 @@ I created this because I didn't like how Claude committed files when I simply as
 
 ## Installation
 
-Clone into your Claude Code skills directory:
+One-liner (clones the repo and optionally installs the global hook guard):
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/ThatXliner/x-commit/main/install.sh)
+```
+
+Or clone manually:
 
 ```bash
 git clone https://github.com/ThatXliner/x-commit.git ~/.claude/skills/x-commit
@@ -26,7 +32,7 @@ The skill is automatically discovered by Claude Code on next conversation start.
 
 The skill includes a `PreToolUse` hook that validates commit messages follow the x-commit format before allowing them through. This prevents Claude from bypassing the skill when confirming a commit with a short reply like "yes".
 
-The hook lives in `.claude/settings.json` in this repo, but it only applies when working inside the skill directory itself. To enable it globally, add this to your `~/.claude/settings.json`:
+The install script will offer to set this up for you. To install it manually, add this to your `~/.claude/settings.json`:
 
 ```jsonc
 {
