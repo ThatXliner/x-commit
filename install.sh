@@ -53,33 +53,26 @@ main() {
     ]
   }'
 
-  # Check for jq
-  if ! command -v jq &>/dev/null; then
-    echo "Error: jq is required to modify settings.json. Install it with:"
-    echo "  brew install jq    # macOS"
-    echo "  apt install jq     # Debian/Ubuntu"
-    echo ""
-    echo "Then re-run: bash $SKILL_DIR/install.sh"
-    return 1
-  fi
-
   # Create settings file if it doesn't exist
   if [ ! -f "$GLOBAL_SETTINGS" ]; then
     echo '{}' > "$GLOBAL_SETTINGS"
   fi
 
-  # Check if hook is already installed
-  if jq -e '.hooks.PreToolUse[]? | select(.matcher == "Bash") | .hooks[]? | select(.if == "Bash(git commit:*)")' "$GLOBAL_SETTINGS" &>/dev/null; then
-    echo "Hook guard already installed in $GLOBAL_SETTINGS"
-  else
-    # Add the hook to settings
-    jq --argjson hook "$HOOK_JSON" '
-      .hooks //= {} |
-      .hooks.PreToolUse //= [] |
-      .hooks.PreToolUse += [$hook]
-    ' "$GLOBAL_SETTINGS" > "${GLOBAL_SETTINGS}.tmp" && mv "${GLOBAL_SETTINGS}.tmp" "$GLOBAL_SETTINGS"
-    echo "Hook guard added to $GLOBAL_SETTINGS"
-  fi
+  # Add hook guard using node (no jq dependency)
+  node -e "
+    const fs = require('fs');
+    const settings = JSON.parse(fs.readFileSync('$GLOBAL_SETTINGS', 'utf8'));
+    const hook = $HOOK_JSON;
+    const existing = (settings.hooks?.PreToolUse || []).some(
+      h => h.matcher === 'Bash' && (h.hooks || []).some(hh => hh.if === 'Bash(git commit:*)')
+    );
+    if (existing) { console.log('Hook guard already installed in $GLOBAL_SETTINGS'); process.exit(0); }
+    settings.hooks = settings.hooks || {};
+    settings.hooks.PreToolUse = settings.hooks.PreToolUse || [];
+    settings.hooks.PreToolUse.push(hook);
+    fs.writeFileSync('$GLOBAL_SETTINGS', JSON.stringify(settings, null, 2) + '\n');
+    console.log('Hook guard added to $GLOBAL_SETTINGS');
+  "
 
   echo "Done! The skill will activate on next conversation start."
 }
