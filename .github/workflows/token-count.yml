@@ -30,7 +30,7 @@ jobs:
           TOTAL=$(bun -e '
           import { encoding_for_model } from "tiktoken";
           import { readFileSync, existsSync } from "fs";
-          const enc = encoding_for_model("gpt-4o");
+          const enc = encoding_for_model("o200k_base");
           let total = 0;
           for (const f of ["SKILL.md"].filter(f => existsSync(f))) {
             const tokens = enc.encode(readFileSync(f, "utf-8")).length;
