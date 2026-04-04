@@ -32,7 +32,7 @@ jobs:
           import { readFileSync, existsSync } from "fs";
           const enc = encoding_for_model("gpt-4o");
           let total = 0;
-          for (const f of ["SKILL.md", "SKILL-fun.md"].filter(f => existsSync(f))) {
+          for (const f of ["SKILL.md"].filter(f => existsSync(f))) {
             const tokens = enc.encode(readFileSync(f, "utf-8")).length;
             console.error(`${f}: ${tokens} tokens`);
             total += tokens;

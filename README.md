@@ -1,6 +1,6 @@
 # x-commit
 
-![tokens](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/ThatXliner/cffd977aeb3539c0571ee27356d3a0b3/raw/x-commit-tokens.json)
+[![Tokens](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2FThatXliner%2Fcffd977aeb3539c0571ee27356d3a0b3%2Fraw%2Fx-commit-tokens.json)](https://github.com/ThatXliner/x-commit/blob/main/SKILL.md)
 
 I created this because I didn't like how Claude committed files when I simply asked it to "create atomic commits." This skill codifies all the things I want.
 
