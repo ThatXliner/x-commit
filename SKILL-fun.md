@@ -35,9 +35,11 @@ Split changes into the smallest **independently revertable** unit. The goal: `gi
 
 **Format:** `:gitmoji: type(scope): imperative description`
 
-Use GitHub shortcode syntax combined with Conventional Commits. Prefer specific gitmojis over general ones (e.g. `:passport_control:` for login logic, not `:sparkles:`).
+Use GitHub shortcode syntax combined with Conventional Commits. Prefer specific gitmojis over general ones (e.g. `:passport_control:` for login logic, not `:sparkles:` or `:rocket:` not `:wrench:`).
 
-### Most Common Gitmoji
+### Gitmoji Reference
+
+Match the gitmoji to the conventional commit `type` semantically. Prefer specific over general (e.g. `:ambulance:` over `:bug:` for critical hotfixes, `:passport_control:` over `:sparkles:` for a new login page).
 
 | Gitmoji | Use for |
 |---------|---------|
@@ -45,39 +47,25 @@ Use GitHub shortcode syntax combined with Conventional Commits. Prefer specific 
 | :bug: | Bug fix |
 | :ambulance: | Critical hotfix |
 | :recycle: | Refactor code |
-| :fire: | Remove code or files |
-| :art: | Improve structure / format |
-| :zap: | Performance improvement |
+| :fire: | Remove code/files |
+| :zap: | Performance |
 | :memo: | Documentation |
-| :white_check_mark: | Add or update tests |
-| :arrow_up: | Upgrade dependencies |
-| :arrow_down: | Downgrade dependencies |
-| :construction_worker: | Create/Revise CI build system |
-| :wrench: | Configuration files |
+| :white_check_mark: | Tests |
+| :arrow_up: / :arrow_down: | Upgrade/downgrade deps |
 | :lock: | Security fix |
-| :truck: | Move or rename files |
 | :boom: | Breaking changes |
-| :lipstick: | UI and style files |
-| :adhesive_bandage: | Simple non-critical fix |
 | :pencil2: | Fix typos |
-| :card_file_box: | Database changes |
-| :label: | Types |
-| :construction: | Work in progress |
-| :see_no_evil: | .gitignore |
-| :rotating_light: | Fix linter warnings |
-| :building_construction: | Architectural changes |
-| :safety_vest: | Validation |
-| :goal_net: | Catch errors |
-| :bulb: | Source code comments |
-| :passport_control: | Auth, roles, permissions |
-| :thread: | Concurrency |
-| :wastebasket: | Deprecate code |
+| :lipstick: | UI/style |
+| :art: | Code style |
+| :wrench: | Config files |
+| :construction_worker: | CI/build |
+| :truck: | Move/rename files |
 
-Full reference: https://gitmoji.dev/
+For niche gitmojis (:passport_control:, :thread:, :card_file_box:, etc.), see https://gitmoji.dev/
 
 ### Type Pairing
 
-The conventional commit `type` should match the gitmoji semantically — pick the gitmoji from the table above whose meaning aligns with the type (e.g. `feat` → `:sparkles:`, `fix` → `:bug:`, `docs` → `:memo:`, `perf` → `:zap:`). When multiple gitmojis fit, prefer the more specific one (e.g. `:ambulance:` over `:bug:` for critical hotfixes, `:lipstick:` over `:art:` for pure UI style changes).
+The gitmoji and conventional commit `type` are independent but related. The gitmoji can be more specific than the type. E.g. `:ambulance: fix(auth):` uses the general `fix` type but the specific `:ambulance:` emoji.
 
 ## Subject Line Rules
 
