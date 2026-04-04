@@ -60,39 +60,39 @@ Prefer more specific gitmojis over general ones (e.g. new login page logic would
 
 ### Most Common Gitmoji
 
-| Gitmoji | Shortcode | Use for |
-|---------|-----------|---------|
-| :sparkles: | `:sparkles:` | New feature |
-| :bug: | `:bug:` | Bug fix |
-| :ambulance: | `:ambulance:` | Critical hotfix |
-| :recycle: | `:recycle:` | Refactor code |
-| :fire: | `:fire:` | Remove code or files |
-| :art: | `:art:` | Improve structure / format |
-| :zap: | `:zap:` | Performance improvement |
-| :memo: | `:memo:` | Documentation |
-| :white_check_mark: | `:white_check_mark:` | Add or update tests |
-| :arrow_up: | `:arrow_up:` | Upgrade dependencies |
-| :arrow_down: | `:arrow_down:` | Downgrade dependencies |
-| :construction_worker: | `:construction_worker:` | Create/Revise CI build system |
-| :wrench: | `:wrench:` | Configuration files |
-| :lock: | `:lock:` | Security fix |
-| :truck: | `:truck:` | Move or rename files |
-| :boom: | `:boom:` | Breaking changes |
-| :lipstick: | `:lipstick:` | UI and style files |
-| :adhesive_bandage: | `:adhesive_bandage:` | Simple non-critical fix |
-| :pencil2: | `:pencil2:` | Fix typos |
-| :card_file_box: | `:card_file_box:` | Database changes |
-| :label: | `:label:` | Types |
-| :construction: | `:construction:` | Work in progress |
-| :see_no_evil: | `:see_no_evil:` | .gitignore |
-| :rotating_light: | `:rotating_light:` | Fix linter warnings |
-| :building_construction: | `:building_construction:` | Architectural changes |
-| :safety_vest: | `:safety_vest:` | Validation |
-| :goal_net: | `:goal_net:` | Catch errors |
-| :bulb: | `:bulb:` | Source code comments |
-| :passport_control: | `:passport_control:` | Auth, roles, permissions |
-| :thread: | `:thread:` | Concurrency |
-| :wastebasket: | `:wastebasket:` | Deprecate code |
+| Gitmoji | Use for |
+|---------|---------|
+| :sparkles: | New feature |
+| :bug: | Bug fix |
+| :ambulance: | Critical hotfix |
+| :recycle: | Refactor code |
+| :fire: | Remove code or files |
+| :art: | Improve structure / format |
+| :zap: | Performance improvement |
+| :memo: | Documentation |
+| :white_check_mark: | Add or update tests |
+| :arrow_up: | Upgrade dependencies |
+| :arrow_down: | Downgrade dependencies |
+| :construction_worker: | Create/Revise CI build system |
+| :wrench: | Configuration files |
+| :lock: | Security fix |
+| :truck: | Move or rename files |
+| :boom: | Breaking changes |
+| :lipstick: | UI and style files |
+| :adhesive_bandage: | Simple non-critical fix |
+| :pencil2: | Fix typos |
+| :card_file_box: | Database changes |
+| :label: | Types |
+| :construction: | Work in progress |
+| :see_no_evil: | .gitignore |
+| :rotating_light: | Fix linter warnings |
+| :building_construction: | Architectural changes |
+| :safety_vest: | Validation |
+| :goal_net: | Catch errors |
+| :bulb: | Source code comments |
+| :passport_control: | Auth, roles, permissions |
+| :thread: | Concurrency |
+| :wastebasket: | Deprecate code |
 
 Full reference: https://gitmoji.dev/
 
