@@ -25,24 +25,7 @@ Before writing any commit message:
 
 Split changes into the smallest **independently revertable** unit. The goal: `git revert <hash>` and `git bisect` should always work cleanly.
 
-```dot
-digraph atomic {
-  "Review staged changes" [shape=box];
-  "Does any code depend on other staged code to compile/run?" [shape=diamond];
-  "Keep together" [shape=box];
-  "Are they logically unrelated?" [shape=diamond];
-  "Split into separate commits" [shape=box];
-  "One commit" [shape=box];
-
-  "Review staged changes" -> "Does any code depend on other staged code to compile/run?";
-  "Does any code depend on other staged code to compile/run?" -> "Are they logically unrelated?" [label="no"];
-  "Does any code depend on other staged code to compile/run?" -> "Keep together" [label="yes"];
-  "Are they logically unrelated?" -> "Split into separate commits" [label="yes"];
-  "Are they logically unrelated?" -> "One commit" [label="no"];
-}
-```
-
-**The rule:** Code that depends on other code to exist (compile, run, pass tests) belongs in the same commit. Logically independent changes get separate commits — even if they touch the same file.
+**The rule:** Dependent code stays together, independent code splits apart — even if they touch the same file.
 
 **Examples:**
 - Refactor + bug fix = two commits (the fix matters for bisect)
