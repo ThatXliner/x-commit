@@ -29,7 +29,7 @@ main() {
     echo '      "hooks": [{'
     echo '        "type": "prompt",'
     echo '        "if": "Bash(git commit:*)",'
-    echo '        "prompt": "Check if this git commit command follows the x-commit skill conventions...",'
+    echo '        "prompt": "Reject unless commit message matches `:gitmoji: type(scope): desc`. If bad, block and say to use /x-commit. Command: $ARGUMENTS",'
     echo '        "statusMessage": "Validating commit format..."'
     echo '      }]'
     echo '    }]'
@@ -47,7 +47,7 @@ main() {
       {
         "type": "prompt",
         "if": "Bash(git commit:*)",
-        "prompt": "Check if this git commit command follows the x-commit skill conventions. The commit message MUST use the format `:gitmoji: type(scope): imperative description` (e.g. `:bug: fix(auth): prevent crash when session expires`). If the message does NOT match this format, block it and tell the model to invoke the x-commit skill first with /x-commit. If it DOES match, allow it. Here is the command: $ARGUMENTS",
+        "prompt": "Reject unless commit message matches `:gitmoji: type(scope): desc`. If bad, block and say to use /x-commit. Command: $ARGUMENTS",
         "statusMessage": "Validating commit format..."
       }
     ]
