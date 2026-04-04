@@ -78,18 +78,7 @@ Full reference: https://gitmoji.dev/
 
 ### Type Pairing
 
-| Type | Gitmoji |
-|------|---------|
-| `feat` | `:sparkles:` |
-| `fix` | `:bug:` / `:ambulance:` |
-| `refactor` | `:recycle:` |
-| `docs` | `:memo:` |
-| `test` | `:white_check_mark:` |
-| `ci` | `:construction_worker:` / `:octocat:` |
-| `perf` | `:zap:` |
-| `build` | `:arrow_up:` / `:wrench:` |
-| `style` | `:art:` / `:lipstick:` |
-| `chore` | `:wrench:` |
+The conventional commit `type` should match the gitmoji semantically — pick the gitmoji from the table above whose meaning aligns with the type (e.g. `feat` → `:sparkles:`, `fix` → `:bug:`, `docs` → `:memo:`, `perf` → `:zap:`). When multiple gitmojis fit, prefer the more specific one (e.g. `:ambulance:` over `:bug:` for critical hotfixes, `:lipstick:` over `:art:` for pure UI style changes).
 
 ## Subject Line Rules
 
