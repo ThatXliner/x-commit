@@ -22,9 +22,31 @@ git clone https://github.com/ThatXliner/x-commit.git ~/.claude/skills/x-commit
 
 The skill is automatically discovered by Claude Code on next conversation start.
 
-### Hook guard
+### Hook guard (recommended)
 
-The skill includes a `PreToolUse` hook (`.claude/settings.json`) that blocks direct `git commit` commands, forcing Claude to use the x-commit skill instead. This prevents Claude from bypassing the skill when confirming a commit (e.g. responding "yes" to "want me to commit?").
+The skill includes a `PreToolUse` hook that validates commit messages follow the x-commit format before allowing them through. This prevents Claude from bypassing the skill when confirming a commit with a short reply like "yes".
+
+The hook lives in `.claude/settings.json` in this repo, but it only applies when working inside the skill directory itself. To enable it globally, add this to your `~/.claude/settings.json`:
+
+```jsonc
+{
+  // ...existing settings...
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "prompt",
+            "if": "Bash(git commit:*)",
+            "prompt": "Check if this git commit command follows the x-commit skill conventions. The commit message MUST use the format `:gitmoji: type(scope): imperative description` (e.g. `:bug: fix(auth): prevent crash when session expires`). If the message does NOT match this format, block it and tell the model to invoke the x-commit skill first with /x-commit. If it DOES match, allow it. Here is the command: $ARGUMENTS",
+            "statusMessage": "Validating commit format..."
+          }
+        ]
+      }
+    ]
+  }
+}
 
 ## Usage
 
