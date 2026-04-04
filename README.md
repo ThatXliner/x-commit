@@ -14,13 +14,46 @@ I created this because I didn't like how Claude committed files when I simply as
 
 ## Installation
 
-Clone into your Claude Code skills directory:
+One-liner (clones the repo and optionally installs the global hook guard):
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/ThatXliner/x-commit/main/install.sh)
+```
+
+Or clone manually:
 
 ```bash
 git clone https://github.com/ThatXliner/x-commit.git ~/.claude/skills/x-commit
 ```
 
 The skill is automatically discovered by Claude Code on next conversation start.
+
+### Hook guard (recommended)
+
+The skill includes a `PreToolUse` hook that validates commit messages follow the x-commit format before allowing them through. This prevents Claude from bypassing the skill when confirming a commit with a short reply like "yes".
+
+The install script will offer to set this up for you. To install it manually, add this to your `~/.claude/settings.json`:
+
+```jsonc
+{
+  // ...existing settings...
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "prompt",
+            "if": "Bash(git commit:*)",
+            "prompt": "Check if this git commit command follows the x-commit skill conventions. The commit message MUST use the format `:gitmoji: type(scope): imperative description` (e.g. `:bug: fix(auth): prevent crash when session expires`). If the message does NOT match this format, block it and tell the model to invoke the x-commit skill first with /x-commit. If it DOES match, allow it. Here is the command: $ARGUMENTS",
+            "statusMessage": "Validating commit format..."
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## Usage
 

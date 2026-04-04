@@ -1,9 +1,6 @@
 ---
 name: x-commit
-description: >
-  Use when writing git commit messages, staging changes for commit, or
-  reviewing commits before push. Triggers on /commit, git commit, or when
-  asked to commit changes.
+description: Use when committing code — writing commit messages, staging, or reviewing commits before push.
 ---
 
 # Writing Commit Messages
