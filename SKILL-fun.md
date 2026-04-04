@@ -85,7 +85,7 @@ The conventional commit `type` should match the gitmoji semantically — pick th
 2. **Imperative mood** — "add", "fix", "remove", not "added", "fixes", "removed"
 3. **Lowercase after colon** — `:bug: fix(auth): handle null user`
 4. **No period at end**
-5. **Say why, not what** — the diff shows what changed. If truly self-explanatory (e.g., `:pencil2: fix(docs): correct "recieve"`), "what" is acceptable.
+5. **Say why, not what** — the diff shows what changed. If truly self-explanatory (e.g., `:pencil2: fix(docs): correct "recieve" → "receive"`), "what" is acceptable.
 
 ```
 # BAD: says what
