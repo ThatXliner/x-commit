@@ -22,6 +22,10 @@ git clone https://github.com/ThatXliner/x-commit.git ~/.claude/skills/x-commit
 
 The skill is automatically discovered by Claude Code on next conversation start.
 
+### Hook guard
+
+The skill includes a `PreToolUse` hook (`.claude/settings.json`) that blocks direct `git commit` commands, forcing Claude to use the x-commit skill instead. This prevents Claude from bypassing the skill when confirming a commit (e.g. responding "yes" to "want me to commit?").
+
 ## Usage
 
 The skill activates automatically when Claude is writing commit messages, staging changes, or reviewing commits. You can also trigger it explicitly with:
