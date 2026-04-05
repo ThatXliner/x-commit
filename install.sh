@@ -29,7 +29,7 @@ main() {
     echo '      "hooks": [{'
     echo '        "type": "prompt",'
     echo '        "if": "Bash(git commit:*)",'
-    echo '        "prompt": "Reject unless commit message matches `:gitmoji: type(scope): desc`. If bad, block and say to use /x-commit. Command: $ARGUMENTS",'
+    echo '        "prompt": "Reject unless message matches `:gitmoji: type(scope): desc`. GFM syntax emojis are ok. If bad, block and say to use /x-commit. Command: $ARGUMENTS",'
     echo '        "statusMessage": "Validating commit format..."'
     echo '      }]'
     echo '    }]'
@@ -47,7 +47,7 @@ main() {
       {
         "type": "prompt",
         "if": "Bash(git commit:*)",
-        "prompt": "Reject unless commit message matches `:gitmoji: type(scope): desc`. If bad, block and say to use /x-commit. Command: $ARGUMENTS",
+        "prompt": "Reject unless message matches `:gitmoji: type(scope): desc`. GFM syntax emojis are ok. If bad, block and say to use /x-commit. Command: $ARGUMENTS",
         "statusMessage": "Validating commit format..."
       }
     ]
