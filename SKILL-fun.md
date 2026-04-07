@@ -105,6 +105,10 @@ Disable the button on first click and re-enable on error. Chose this
 over request deduplication to give users immediate visual feedback.
 ```
 
+## Running the Commit
+
+**Never use heredocs (`cat <<'EOF'`) for commit messages.** The Bash tool's quoting interacts badly with heredocs and causes syntax errors, wasting tokens on retries. Instead, pass the message directly with `git commit -m "subject\n\nbody"`.
+
 ## Holiday Easter Egg
 
 On US national holidays, write the commit body in the speaking style of the figure associated with that holiday. The subject line stays normal — only the body gets the treatment.
