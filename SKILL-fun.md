@@ -21,15 +21,9 @@ A commit message exists for the person reading `git log` six months from now. Te
 
 ## Atomic Commits
 
-Split changes into the smallest **independently revertable** unit. The goal: `git revert <hash>` and `git bisect` should always work cleanly.
+**Default to splitting** — granular commits make `git revert`, `git bisect`, and code review easier.
 
-**The rule:** Dependent code stays together, independent code splits apart — even if they touch the same file.
-
-**Examples:**
-- Refactor + bug fix = two commits (the fix matters for bisect)
-- Typo fix + config change + style fix = three commits
-- New function + its tests + its caller = two commits (caller depends on the definition, but tests can be added separately)
-- Logic + UI = two commits (UI can technically exist without logic; it's not going to crash or cause any signficant error)
+**The splitting criterion is motivation, not subsystem.** Split when changes have different *whys*, not when they touch different files or categories. "I was fixing X and noticed unrelated Y" = two commits. "I built X which required touching A, B, and C" = one commit. "Add crash recovery and its error reporting" = one commit (same why). "Fix typo and add feature" = two commits (different whys).
 
 ## Gitmoji + Conventional Commits
 
