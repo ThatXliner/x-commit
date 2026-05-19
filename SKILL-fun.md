@@ -7,7 +7,7 @@ description: Use when committing code — writing commit messages, staging, or r
 
 ## Core Principle
 
-Commit msg = for person reading `git log` 6 months later. Tell **why** change exists — diff shows *what*/*how*.
+A commit message exists for the person reading `git log` six months from now. Tell them **why** this change exists — the diff already shows *what* and *how*.
 
 ## Pre-Commit Checklist
 
