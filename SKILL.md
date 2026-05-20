@@ -14,6 +14,7 @@ Commit msg = for person reading `git log` 6 months later. Tell **why** change ex
 1. **Stage selectively** — `git status` + `git diff` first. Never `git add -A` / `git add .`.
    - **Prior context:** only `git add` files from current task. Leave other unstaged/untracked changes alone.
    - **No prior context (e.g. bare `/commit`):** stage all, **unless** incomplete features (half-written code, TODO stubs, broken imports). Warn user, commit only complete stuff. If user insists, commit what they ask.
+   - IT IS IMPERATIVE YOU NEVER COMMIT THINGS THAT ARE NOT MENTIONED IN THE CURRENT CONVERSATION
 2. **Lint** — all linters pass. No `git commit --no-verify`.
 3. **Docs** — update docs/architecture files in same commit. If doc changes too big, split to separate commit.
 4. **NEVER commit AI plan files** (`docs/superpowers/` etc.) — those are ephemeral agent guidance, not project docs.
@@ -21,7 +22,7 @@ Commit msg = for person reading `git log` 6 months later. Tell **why** change ex
 
 ## Atomic Commits
 
-**Default: split.** Granular = easier `git revert`, `git bisect`, code review.
+**Try to split into as many atomic commits as possible.** If there is a list of features (e.g. "Implemented X, Y, and Z types"), split each one into a separate commit.
 
 **Split by motivation, not subsystem.** Different *whys* = different commits. Same *why* = same commit. "Fix X, Fixed Y" = 2 commits. "Build X, needs A+B+C" = 1 commit if the code won't work without A+B+C; 3 commits if A, B, and C can exist independently. "Crash recovery + its error reporting" = 2 commits. "Fix typo + add feature" = 2 commits.
 
