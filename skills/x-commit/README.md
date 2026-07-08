@@ -6,6 +6,8 @@ Part of the [**xtras**](../../README.md) plugin.
 
 I created this because I didn't like how Claude committed files when I simply asked it to "create atomic commits." This skill codifies all the things I want.
 
+The only downside is that it does spend significantly extra tokens trying to separate code into clean atomic commits (even shelling out to [gah](https://github.com/ThatXliner/gah) if necessary) but in the long term that's typically better, is it not? It always takes more effort to do things the clean way. 
+
 ## Features
 
 - **Gitmoji + Conventional Commits** — combines [visual emoji shortcodes](https://gitmoji.dev/) (`:bug:`, `:sparkles:`) with [machine-parseable types](https://www.conventionalcommits.org/en/v1.0.0/) (`fix`, `feat`) in one format
