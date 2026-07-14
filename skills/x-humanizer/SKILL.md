@@ -1,7 +1,8 @@
 ---
 name: x-humanizer
 description: |
-  Remove signs of AI-generated writing from text. Use when editing or reviewing
+  Remove signs of AI-generated writing from text — rhythm, sentence mechanics,
+  contrast frames, and stock AI vocabulary. Use when editing or reviewing
   text to make it sound more natural and human-written.
 allowed-tools:
   - Read
@@ -30,7 +31,10 @@ Avoid the rhythm of short-sentence, short-sentence, payoff-sentence. If two shor
 
 ### 3. No one-line paragraphs used as punchlines
 
-Each paragraph should develop a thought across multiple sentences.
+Each paragraph should develop a thought across multiple sentences. This
+applies to closing paragraphs too — a final paragraph of one sentence is a
+punchline. Either develop the closing thought into a second sentence or fold
+it into the previous paragraph.
 
 ### 4. No em-dashes as dramatic pauses
 
@@ -44,6 +48,28 @@ Don't write "There's X. There's Y. There's Z." — write them as actual lists or
 
 Don't let a sentence rely on the next one to complete it.
 
+### 7. No "not just X but Y" contrast frames
+
+"It's not just a productivity boost. It's a paradigm shift." is a tell, and
+merging it into "It isn't just a productivity boost; it's a paradigm shift."
+does not fix it — the frame itself is the tell, not the punctuation. Recast
+the sentence to state the stronger claim directly and let the weaker one go:
+"It amounts to a paradigm shift in how software gets built." Avoid "not
+just", "isn't just", "more than just", and "It's not X. It's Y." in all
+their punctuation variants. (A genuine contrast of substance, like "not
+incrementally but fundamentally", is fine — the banned frame is the one
+where X is a strawman staged so Y can land.)
+
+### 8. No stock AI vocabulary
+
+Certain words and phrases mark text as machine-written regardless of rhythm.
+Replace them with plainer language, or delete the clause if it carries no
+content: delve, tapestry, game-changer, seamless(ly), leverage (as a verb),
+robust (for anything but statistics or engineering), "In today's …", "It's
+important to note", "It's worth noting", "at the end of the day", "In
+conclusion". Throat-clearing openers ("Ultimately,", "In essence,") usually
+delete cleanly — if the sentence still works without it, drop it.
+
 ### The Test
 
 Read any single sentence aloud in isolation. It should stand up grammatically and feel complete on its own. If it only works because of what comes before or after it, rewrite it.
@@ -51,6 +77,10 @@ Read any single sentence aloud in isolation. It should stand up grammatically an
 ## What to Preserve
 
 Keep the argument, the structure, and the voice. Change only the rhythm and the sentence mechanics.
+
+## Final Check (mandatory — do not skip)
+
+After writing the rewritten text, re-read the whole result and count the sentences in each paragraph. If any paragraph contains exactly one sentence, the rewrite is NOT finished — this is the most common way rewrites fail rule 3, because a long, comma-joined sentence still counts as one sentence. Fix each offender by merging the paragraph into a neighbor or by adding a sentence that develops its thought, then re-count. Only submit when every paragraph has at least two sentences.
 
 ## Example
 
@@ -60,4 +90,4 @@ Keep the argument, the structure, and the voice. Change only the rhythm and the 
 > This is exciting. It's also terrifying.
 
 **After:**
-> AI assistants are changing everything, not incrementally but fundamentally. The way we write code, compose emails, and even think through problems is all shifting, and the question is not just about saving time but about reimagining what's possible. This is exciting, and it is also terrifying.
+> AI assistants are changing everything, not incrementally but fundamentally. The way we write code, compose emails, and even think through problems is all shifting, and the point is less the time saved than the change in what is possible. This is exciting, and it is also terrifying.
