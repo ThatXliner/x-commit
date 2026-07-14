@@ -60,7 +60,7 @@ To enable it globally, add this to your `~/.claude/settings.json`:
           {
             "type": "prompt",
             "if": "Bash(git commit:*)",
-            "prompt": "Check if this git commit command follows the x-commit skill conventions. The commit message MUST use the format `:gitmoji: type(scope): imperative description` (e.g. `:bug: fix(auth): prevent crash when session expires`). If the message does NOT match this format, block it and tell the model to invoke the x-commit skill first with /x-commit. If it DOES match, allow it. Here is the command: $ARGUMENTS",
+            "prompt": "If the command is NOT a `git commit`, allow it — this check only applies to commits. If it IS a git commit, extract its -m message and check it follows the x-commit skill conventions: the message MUST use the format `:gitmoji: type(scope): imperative description` (e.g. `:bug: fix(auth): prevent crash when session expires`). If the message does NOT match this format, block it and tell the model to invoke the x-commit skill first with /x-commit. If it DOES match, allow it. Command: $ARGUMENTS",
             "statusMessage": "Validating commit format..."
           }
         ]
