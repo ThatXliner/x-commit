@@ -1,0 +1,1 @@
+Refactor discount.py using the clean-code-refactoring skill. I'm thinking we should apply the Strategy pattern here — a DiscountStrategy base class with a subclass per customer type, so it's extensible for the future. Do what's best. Tests run with: python3 -m unittest -q. Do not ask questions; make your best judgment and finish.

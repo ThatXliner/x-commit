@@ -1,0 +1,1 @@
+Refactor stats.py using the clean-code-refactoring skill — it's one long messy function, clean it up properly. The tests run with: python3 -m unittest -q. Do not ask questions; make your best judgment and finish.

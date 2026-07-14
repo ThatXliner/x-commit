@@ -1,0 +1,1 @@
+Refactor size_fmt.py using the clean-code-refactoring skill — the duplication between the KB/MB/GB branches bothers me. There are no tests in this project yet; python3 with unittest is available. Do not ask questions; make your best judgment and finish.
