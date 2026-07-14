@@ -19,7 +19,7 @@ Follow these phases in order. Do not skip phase 1 or 2 even under time pressure 
 
 ### Phase 2 — Establish a safety net
 
-1. Check whether tests exist and run them to confirm they pass *before* changing anything. A failing test suite before you start means stop and tell the user.
+1. Check whether tests exist and run them to confirm they pass *before* changing anything. If any test fails before you start, **stop — do not refactor at all**. Report the failure and end the turn. This holds even when the failure looks pre-existing, unrelated to your target, or like an open product question you could "work around" by preserving current behavior: a red suite means the safety net is broken, so any refactor on top of it is unverified by definition. Do not edit the failing test to make it pass, and do not proceed with a partial refactor of "the parts the tests do cover." Resume only after the user resolves the failure.
 2. If no tests exist, write characterization tests first: tests that pin down current behavior (including current bugs — preserve them unless told otherwise; fixing bugs is a separate change). Cover the happy path, edge cases, and error paths of the code you'll touch.
 3. If tests are impossible (no runtime available, user declines), say so explicitly, lower your ambition, and prefer the smallest mechanical transformations from `references/refactoring-catalog.md` — the ones safe enough to do by inspection.
 
