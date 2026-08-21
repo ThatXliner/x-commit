@@ -15,6 +15,7 @@ Commit msg = for person reading `git log` 6 months later. Tell **why** change ex
    - **Prior context:** only `git add` files from current task. Leave other unstaged/untracked changes alone.
    - **No prior context (e.g. bare `/commit`):** stage all, **unless** incomplete features (half-written code, TODO stubs, broken imports). Warn user, commit only complete stuff. If user insists, commit what they ask.
    - IT IS IMPERATIVE YOU NEVER COMMIT THINGS THAT ARE NOT MENTIONED IN THE CURRENT CONVERSATION
+   - Never undo code changes just to get a nicer commit. Always try to use hunk staging or https://github.com/ThatXliner/gah when applicable
 2. **Lint** — all linters pass. No `git commit --no-verify`.
 3. **Docs** — update docs/architecture files in same commit. If doc changes too big, split to separate commit.
 4. **NEVER commit AI plan files** (`docs/superpowers/` etc.) — those are ephemeral agent guidance, not project docs.
